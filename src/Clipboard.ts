@@ -207,16 +207,16 @@ export const Clipboard = {
   },
   /**
    * (Android Only)
-   * * Clear clipboard returns promise with a boolean if the clipboard is cleared. 
-   * This was added in Android API level 28 
+   * * Clear clipboard returns promise with a boolean if the clipboard is cleared.
+   * This was added in Android API level 28
    * ```javascript
    * Clipboard.clearClipboard();
    * ```
    */
   clearClipboard() {
-    if (Platform.OS == 'ios') {
+    if (Platform.OS === 'ios') {
       return;
     }
-    return NativeClipboard.clearClipboard(); 
-  }
+    return NativeClipboard.clearClipboard();
+  },
 };
