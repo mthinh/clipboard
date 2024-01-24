@@ -205,4 +205,18 @@ export const Clipboard = {
   removeAllListeners() {
     removeAllListeners();
   },
+  /**
+   * (Android Only)
+   * * Clear clipboard returns promise with a boolean if the clipboard is cleared. 
+   * This was added in Android API level 28 
+   * ```javascript
+   * Clipboard.clearClipboard();
+   * ```
+   */
+  clearClipboard() {
+    if (Platform.OS == 'ios') {
+      return;
+    }
+    return NativeClipboard.clearClipboard(); 
+  }
 };

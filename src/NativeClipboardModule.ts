@@ -148,6 +148,10 @@ export interface Spec extends TurboModule {
   removeListener(): void;
   addListener(eventName: string): void;
   removeListeners(count: Int32): void;
+  /**
+   * (Android 28+ only)
+   */
+  clearClipboard(): Promise<boolean>;
 }
 
 const ClipboardTurboModule =
